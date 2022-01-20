@@ -5,14 +5,15 @@ int MUL (int a, int b);
 int FACT (int n);
 
 int main() {
-  int n = 5;
+  int n = 4;
   cout << FACT (n) << "\n";
 } 
 
 int MUL (int a, int b){
   int c = 0;
-  for (int i = b; i > 0; i--){
+  while (b > 0){
     c = c + a;
+    b--;
   }
   return c;
 }
