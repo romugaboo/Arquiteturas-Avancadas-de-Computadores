@@ -1,15 +1,11 @@
-addi sp, x0, 1000 # Reserva stack area
-addi x9, x9, 4  # Fatorial do valor 4
-jal x10, MUL # Pulo para a função de multiplicação
+addi sp, x0, 1000 # Inicia a pilha
+addi x10, x0, 4  # Fatorial do valor 4
+jal x1, FACT # Pulo para a função de fatorial
 jal x0, END # Encerra o programa
 
-MUL:
-    add x10, x9, x9 # Soma consecutiva
-    sw 
-    jal x10, MUL
-    jalr x0, x1, 0
+FACT:
 
 END:
-# 4 x 3 = 12     4 + 4 = 8       8 + 4 = 12
+# 4 x 3 = 12     4 + 4 + 4 = 12    4 + 4 = 8    8 + 4 = 12
 # 12 x 2 = 24    12 + 12 = 24
 # 24 x 1 = 24    24 + 0 = 24
