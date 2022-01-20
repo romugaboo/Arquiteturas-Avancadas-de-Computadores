@@ -1,9 +1,27 @@
 addi sp, x0, 1000 # Inicia a pilha
-addi x10, x0, 4  # Fatorial do valor 4
+addi x10, x0, 1  # Fatorial do valor 4
+addi x9, x0, 1  # Valor 1 para x9
 jal x1, FACT # Pulo para a função de fatorial
 jal x0, END # Encerra o programa
 
 FACT:
+    bne x10, x9, ELSE
+    sub x10, x10, x10     #Fatorial de 1 é 1
+    addi x10, x10, 1
+    beq x0, x0, EXIT
+ELSE: 
+EXIT:
+
+bne x10, x0, ELSE2
+    sub x10, x10, x10     #Fatorial de 0 é 1
+    addi x10, x10, 1
+    beq x0, x0, EXIT2
+ELSE2: 
+
+
+EXIT2:
+
+
 
 END:
 # 4 x 3 = 12     4 + 4 + 4 = 12    4 + 4 = 8    8 + 4 = 12
