@@ -5,8 +5,7 @@ int MUL (int a, int b);
 int FACT (int n);
 
 int main() {
-  int a = 3, b = 4, n = 6;
-  cout << MUL (a, b) << "\n";
+  int n = 5;
   cout << FACT (n) << "\n";
 } 
 
